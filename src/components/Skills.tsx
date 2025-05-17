@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { FaBootstrap, FaHtml5, FaJava, FaJsSquare, FaPython, FaReact } from "react-icons/fa";
+import { BiLogoTypescript } from "react-icons/bi";
+import { GrMysql } from "react-icons/gr";
 
 const Skills = () => {
   const controls = useAnimation();
@@ -36,14 +39,14 @@ const Skills = () => {
   };
 
   const skills = [
-    { name: 'React', level: 90, icon: '⚛️' },
-    { name: 'TypeScript', level: 85, icon: '🔷' },
-    { name: 'JavaScript', level: 95, icon: '🟨' },
-    { name: 'HTML & CSS', level: 90, icon: '🌐' },
-    { name: 'Redux', level: 80, icon: '🔄' },
-    { name: 'Next.js', level: 75, icon: '⏭️' },
-    { name: 'Tailwind CSS', level: 85, icon: '🌊' },
-    { name: 'Node.js', level: 70, icon: '🟢' },
+    { name: 'React', level: 90, icon: <FaReact color="skyblue" /> },
+    { name: 'TypeScript', level: 85, icon: <BiLogoTypescript color="#3178c6" /> },
+    { name: 'JavaScript', level: 95, icon: <FaJsSquare color="#F7DF1E" /> },
+    { name: 'HTML & CSS', level: 90, icon: <FaHtml5 color="#ff6900" /> },
+    { name: 'Java', level: 80, icon: <FaJava /> },
+    { name: 'Python', level: 75, icon: <FaPython /> },
+    { name: 'Bootstrap CSS', level: 85, icon: <FaBootstrap color="#534fa3" /> },
+    { name: 'MySql', level: 85, icon: <GrMysql color="#0693e3" /> },
   ];
 
   return (

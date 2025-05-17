@@ -25,7 +25,7 @@ function App() {
     // Simulate loading for the animation
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 500);
   }, []);
 
   useEffect(() => {
