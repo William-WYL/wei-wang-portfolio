@@ -6,54 +6,21 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Testimonials from "./components/Testimonials";
-import { motion, AnimatePresence } from 'framer-motion';
+import WelcomePage from "./components/WelcomePage";
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 
 function App() {
-  const [theme, setTheme] = useState<'light' | 'dark' | 'purple'>('light');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check for saved theme preference or use system preference
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | 'purple' | null;
-
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-    }
-
     // Simulate loading for the animation
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 1500);
   }, []);
 
-  useEffect(() => {
-    // Update document class for theme
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-      document.documentElement.classList.remove('purple-theme');
-    } else if (theme === 'purple') {
-      document.documentElement.classList.add('purple-theme');
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.remove('dark', 'purple-theme');
-    }
-
-    // Save preference
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(current => {
-      if (current === 'light') return 'dark';
-      if (current === 'dark') return 'purple';
-      return 'light';
-    });
-  };
-
   // Animation variants for page load
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -67,7 +34,7 @@ function App() {
   };
 
   // Variants for loader screen
-  const loaderVariants = {
+  const loaderVariants: Variants = {
     initial: { scale: 1 },
     exit: {
       scale: 0,
@@ -80,28 +47,10 @@ function App() {
   };
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={`app dark`}>
       <AnimatePresence>
         {loading ? (
-          <motion.div
-            key="loader"
-            className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900 purple-theme:bg-purple-900"
-            variants={loaderVariants}
-            initial="initial"
-            exit="exit"
-          >
-            <div className="text-center">
-              <div className="relative mb-8">
-                <div className="h-24 w-24 rounded-full border-t-4 border-b-4 border-purple-600 animate-spin"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-bold">
-                  <span className="text-purple-600">P</span>
-                </div>
-              </div>
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white purple-theme:text-white">
-                <span className="text-purple-600">Port</span>folio
-              </h1>
-            </div>
-          </motion.div>
+          <WelcomePage loaderVariants={loaderVariants} />
         ) : (
           <motion.div
             key="content"
@@ -110,7 +59,7 @@ function App() {
             animate="visible"
             className="w-full"
           >
-            <Navbar toggleTheme={toggleTheme} theme={theme} />
+            <Navbar />
             <main>
               <About />
               <Skills />
