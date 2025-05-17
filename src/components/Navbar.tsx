@@ -36,7 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme = 'light' }) => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Testimonials', href: '#testimonials' },
+    { name: 'Certification', href: '#certification' },
     { name: 'Contact', href: '#contact' },
   ];
 

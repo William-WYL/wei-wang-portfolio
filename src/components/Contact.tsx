@@ -3,6 +3,7 @@ import type { FormEvent } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const controls = useAnimation();
@@ -20,6 +21,10 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  useEffect(() => {
+    emailjs.init('SQD2BSAHH32vXEAKY');
+  }, []);
 
   useEffect(() => {
     if (inView) {
@@ -55,28 +60,56 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // FIRST: Send original message to your inbox
+      const inboxPromise = emailjs.send(
+        'service_hif4kra',
+        'template_xigksfp', // Different template for your copy
+        {
+          to_email: "weiwang.william.ca@gmail.com", // Your inbox
+          from_name: formData.name,
+          from_email: formData.email, // Visitor's email
+          subject: `${formData.subject}`,
+          message: formData.message,
+          reply_to: formData.email // So you can reply directly
+        },
+        'SQD2BSAHH32vXEAKY'
+      );
+
+      // SECOND: Send auto-reply to visitor
+      const autoReplyPromise = emailjs.send(
+        'service_hif4kra',
+        'template_evy4ev9',
+        {
+          to_email: formData.email, // Visitor's email
+          from_name: formData.name,
+          subject: `${formData.subject}`,
+          message: "Thank you for your message...", // Your auto-reply text
+          reply_to: "weiwang.william.ca@gmail.com" // Your reply address
+        },
+        'SQD2BSAHH32vXEAKY'
+      );
+
+      await Promise.all([inboxPromise, autoReplyPromise]);
+
       setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error: unknown) {
+      console.error('Email failed:', error);
+      setSubmitStatus('error');
 
-      // Reset form after success
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-
-      // Reset status after 3 seconds
-      setTimeout(() => {
-        setSubmitStatus('idle');
-      }, 3000);
-    }, 1500);
+      if (error && typeof error === 'object' && 'text' in error) {
+        alert(`Error: ${(error as { text: string; }).text}`);
+      } else {
+        alert('Error: Failed to send emails');
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -118,7 +151,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
-                    <p className="text-gray-800 dark:text-gray-200">contact@example.com</p>
+                    <p className="text-gray-800 dark:text-gray-200">weiwang.willia.ca@gmail.com</p>
                   </div>
                 </div>
 
@@ -128,7 +161,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">Phone</p>
-                    <p className="text-gray-800 dark:text-gray-200">+1 (555) 123-4567</p>
+                    <p className="text-gray-800 dark:text-gray-200">+1 (431) 371-6862</p>
                   </div>
                 </div>
 
@@ -138,7 +171,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 dark:text-gray-400">Location</p>
-                    <p className="text-gray-800 dark:text-gray-200">San Francisco, CA</p>
+                    <p className="text-gray-800 dark:text-gray-200">Winnipeg, MA</p>
                   </div>
                 </div>
               </div>

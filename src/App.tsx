@@ -5,7 +5,7 @@ import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
-import Testimonials from "./components/Testimonials";
+import Certification from "./components/Certification";
 import WelcomePage from "./components/WelcomePage";
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 
@@ -16,7 +16,7 @@ function App() {
     // Simulate loading for the animation
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 2500);
   }, []);
 
   // Animation variants for page load
@@ -64,7 +64,7 @@ function App() {
               <About />
               <Skills />
               <Projects />
-              <Testimonials />
+              <Certification />
               <Contact />
             </main>
             <footer className="py-8 bg-gray-100 dark:bg-gray-800 text-center text-gray-600 dark:text-gray-300">

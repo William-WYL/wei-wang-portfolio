@@ -21,7 +21,7 @@ const Welcompage = ({ loaderVariants }: WelcomePageProps) => {
             transition={{ duration: 1.5 }}
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl font-bold"
           >
-            <span className="text-purple-600">Welcome</span>
+            <span className="text-purple-600 text-3xl">Welcome</span>
           </motion.div>
         </div>
         <motion.h1
@@ -30,7 +30,7 @@ const Welcompage = ({ loaderVariants }: WelcomePageProps) => {
           transition={{ duration: 1.5, delay: 1 }}
           className="text-2xl font-bold text-gray-900 dark:text-white purple-theme:text-white"
         >
-          I am <span className="text-purple-600">Wei Wang</span>, a Full Stack Developer.
+          I am <span className="text-purple-600">Wei Wang</span>, a Full Stack Web Developer.
         </motion.h1>
       </div>
     </motion.div></>

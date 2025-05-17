@@ -43,9 +43,9 @@ const About = () => {
               <div className="absolute -inset-4 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 opacity-75 blur"></div>
               <div className="relative overflow-hidden rounded-lg">
                 <img
-                  src="src\assets\profile-picture-man-using-virtual-reality-headset-metaverse-digital-cyber-world-technology-illustration-vector.jpg"
+                  src="src/assets/profile-picture-man-using-virtual-reality-headset-metaverse-digital-cyber-world-technology-illustration-vector.jpg"
                   alt="Profile"
-                  className="w-full h-auto rounded-lg shadow-xl object-cover"
+                  className="w-full h-auto rounded-lg shadow-xl object-cover transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-2xl"
                 />
               </div>
             </div>
@@ -53,19 +53,16 @@ const About = () => {
 
           <motion.div className="md:w-1/2" variants={itemVariants}>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-purple-600 dark:text-purple-400">
-              About Me
+              Wei (William) Wang
             </h2>
             <h3 className="text-2xl md:text-3xl font-semibold mb-6">
-              I'm a <span className="text-purple-600 dark:text-purple-400">Frontend Developer</span> with a passion for creating beautiful user experiences
+              I'm a <span className="text-purple-600 dark:text-purple-400">Full Stack Developer</span>
             </h3>
             <p className="text-gray-700 dark:text-gray-300 mb-6 text-lg">
-              I specialize in building modern, responsive web applications using React and TypeScript.
-              With a keen eye for design and a strong technical foundation, I create seamless user interfaces
-              that are both functional and visually appealing.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 mb-8 text-lg">
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects,
-              or sharing my knowledge through blog posts and mentoring junior developers.
+              I am a student in Term 3 of a program in Red River College, Canada, in Full Stack Web Development.
+              With a strong foundation in both client-side and server-side development from one year college training
+              and one year self-learning, I deliver seamless, responsive user experiences backed by scalable and
+              robust backend systems.
             </p>
 
             <div className="flex flex-wrap gap-4">
