@@ -43,7 +43,7 @@ const About = () => {
               <div className="absolute -inset-4 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 opacity-75 blur"></div>
               <div className="relative overflow-hidden rounded-lg">
                 <img
-                  src="public\image\profile-picture-man-using-virtual-reality-headset-metaverse-digital-cyber-world-technology-illustration-vector.jpg"
+                  src="/image/profile-picture-man-using-virtual-reality-headset-metaverse-digital-cyber-world-technology-illustration-vector.jpg"
                   alt="Profile"
                   className="w-full h-auto rounded-lg shadow-xl object-cover transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-2xl"
                 />
