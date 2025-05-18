@@ -23,7 +23,7 @@ const CertificateCarousel = () => {
       issuer: 'National Computer Rank Examination',
       score: 'over 90%',
       date: 'March 2024',
-      image: '../src/assets/certificatation/javaCerti.jpeg',
+      image: 'public/image/certificates/javaCerti.jpeg',
     },
     {
       id: 2,
@@ -31,21 +31,21 @@ const CertificateCarousel = () => {
       issuer: 'National Computer Rank Examination',
       score: 'over 90%',
       date: 'March 2024',
-      image: '../src/assets/certificatation/WebDevCerti.jpeg',
+      image: 'public/image/certificates/WebDevCerti.jpeg',
     },
     {
       id: 3,
       title: 'Programming Foundations: Object-Oriented Design',
       issuer: 'LinkedIn Learning',
       date: 'May 2025',
-      image: '../src/assets/certificatation/CertificateOfCompletion_Programming Foundations ObjectOriented Design-1.png',
+      image: 'public/image/certificates/CertificateOfCompletion_Programming Foundations ObjectOriented Design-1.png',
     },
     {
       id: 4,
       title: 'Business Analyst and Project Manager Collaboration',
       issuer: 'International Institute of Business Analysis (IIBA®)',
       date: 'May 2025',
-      image: '../src/assets/certificatation/CertificateOfCompletion_Business Analyst and Project Manager Collaboration 2018.jpeg',
+      image: 'public/image/certificates/CertificateOfCompletion_Programming Foundations ObjectOriented Design-1.png',
     },
     {
       id: 5,
@@ -60,7 +60,7 @@ const CertificateCarousel = () => {
       issuer: 'Red River College',
       score: 'average over 90%',
       date: 'May 2025',
-      image: '../src/assets/certificatation/transcript.png',
+      image: 'public/image/certificates/transcript.png',
     }
   ];
 
