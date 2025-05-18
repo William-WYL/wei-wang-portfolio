@@ -3,7 +3,7 @@ import { Moon, Sun, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   toggleTheme?: () => void;
-  theme?: 'light' | 'dark' | 'purple';
+  theme?: 'light' | 'dark';
 }
 
 const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme = 'light' }) => {
@@ -44,16 +44,15 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme = 'light' }) => {
   const scrolledClasses = scrolled
     ? "bg-white shadow-md dark:bg-gray-900 dark:text-white py-2"
     : "bg-transparent py-6";
-  const purpleClasses = theme === 'purple' ? "bg-purple-900 text-white" : "";
 
   return (
-    <nav className={`${baseNavClasses} ${scrolledClasses} ${theme === 'purple' && scrolled ? purpleClasses : ''}`}>
+    <nav className={`${baseNavClasses} ${scrolledClasses}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <a
               href="#"
-              className={`font-bold text-xl md:text-2xl ${theme === 'purple' ? 'text-white' : 'text-gray-900 dark:text-white'}`}
+              className="font-bold text-xl md:text-2xl text-gray-900 dark:text-white"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               <span className="text-purple-600 dark:text-purple-400">Port</span>folio
@@ -66,10 +65,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme = 'light' }) => {
               <a
                 key={item.name}
                 href={item.href}
-                className={`
-                  ${theme === 'purple' ? 'text-white hover:text-purple-300' : 'text-gray-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400'} 
-                  transition-colors duration-300 font-medium
-                `}
+                className="text-gray-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-300 font-medium"
               >
                 {item.name}
               </a>
@@ -83,10 +79,8 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme = 'light' }) => {
               >
                 {theme === 'dark' ? (
                   <Sun className="h-5 w-5 text-yellow-400" />
-                ) : theme === 'purple' ? (
-                  <Moon className="h-5 w-5 text-white" />
                 ) : (
-                  <Moon className="h-5 w-5 text-gray-900" />
+                  <Moon className="h-5 w-5 text-gray-900 dark:text-white" />
                 )}
               </button>
             )}
@@ -102,17 +96,15 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme = 'light' }) => {
               >
                 {theme === 'dark' ? (
                   <Sun className="h-5 w-5 text-yellow-400" />
-                ) : theme === 'purple' ? (
-                  <Moon className="h-5 w-5 text-white" />
                 ) : (
-                  <Moon className="h-5 w-5 text-gray-900" />
+                  <Moon className="h-5 w-5 text-gray-900 dark:text-white" />
                 )}
               </button>
             )}
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-md ${theme === 'purple' ? 'text-white' : 'text-gray-900 dark:text-white'}`}
+              className="p-2 rounded-md text-gray-900 dark:text-white"
               aria-label="Open menu"
             >
               {mobileMenuOpen ? (
@@ -129,17 +121,12 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme = 'light' }) => {
       <div
         className={`md:hidden ${mobileMenuOpen ? 'max-h-96' : 'max-h-0'} overflow-hidden transition-all duration-500 ease-in-out`}
       >
-        <div className={`px-2 pt-2 pb-3 space-y-1 sm:px-3 ${theme === 'purple' ? 'bg-purple-900' : 'bg-white dark:bg-gray-900'}`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className={`
-                block px-3 py-2 rounded-md text-base font-medium
-                ${theme === 'purple'
-                  ? 'text-white hover:bg-purple-800'
-                  : 'text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800'}
-              `}
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.name}

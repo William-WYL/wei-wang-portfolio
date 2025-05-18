@@ -11,13 +11,38 @@ import { motion, AnimatePresence, type Variants } from 'framer-motion';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
   useEffect(() => {
     // Simulate loading for the animation
     setTimeout(() => {
       setLoading(false);
     }, 2500);
+
+    // Check for saved theme preference in localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
+      setTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      // Use system preference as fallback
+      setTheme('dark');
+    }
   }, []);
+
+  // Update the DOM when theme changes
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  // Function to toggle between light and dark themes
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
 
   // Animation variants for page load
   const containerVariants: Variants = {
@@ -47,7 +72,7 @@ function App() {
   };
 
   return (
-    <div className={`app dark`}>
+    <div className={`app ${theme}`}>
       <AnimatePresence>
         {loading ? (
           <WelcomePage loaderVariants={loaderVariants} />
@@ -59,7 +84,7 @@ function App() {
             animate="visible"
             className="w-full"
           >
-            <Navbar />
+            <Navbar toggleTheme={toggleTheme} theme={theme} />
             <main>
               <About />
               <Skills />
