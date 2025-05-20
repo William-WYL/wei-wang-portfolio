@@ -1,5 +1,4 @@
 import { useState, useEffect, type JSX } from 'react';
-import { Code, Coffee, Database, Globe, Layers, Settings, FileCode, Zap } from 'lucide-react';
 import { FaHtml5, FaJava, FaJsSquare, FaPhp, FaPython, FaReact } from "react-icons/fa";
 import { BiLogoTypescript } from "react-icons/bi";
 import { GrMysql } from "react-icons/gr";

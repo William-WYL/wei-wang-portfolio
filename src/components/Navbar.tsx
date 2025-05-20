@@ -65,7 +65,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme = 'light' }) => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-300 font-medium"
+                className="text-gray-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-300 font-medium hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]"
               >
                 {item.name}
               </a>
