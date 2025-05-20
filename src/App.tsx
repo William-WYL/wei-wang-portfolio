@@ -8,6 +8,7 @@ import Skills from "./components/Skills";
 import Certification from "./components/Certification";
 import WelcomePage from "./components/WelcomePage";
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
+import Footer from "./components/Footer";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -92,16 +93,7 @@ function App() {
               <Certification />
               <Contact />
             </main>
-            <footer className="py-8 bg-gray-100 dark:bg-gray-800 text-center text-gray-600 dark:text-gray-300">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <p>© {new Date().getFullYear()} My Portfolio. All rights reserved.</p>
-                <p className="mt-2 text-sm">
-                  Designed & built with
-                  <span className="text-red-500 mx-1">❤</span>
-                  using React & Typescript
-                </p>
-              </div>
-            </footer>
+            <Footer />
           </motion.div>
         )}
       </AnimatePresence>
