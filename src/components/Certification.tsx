@@ -174,7 +174,7 @@ const CertificateCarousel = () => {
           {!isMobile && (
             <div className="relative">
               {/* Cards container */}
-              <div className="flex justify-center gap-6 mb-8">
+              <div className="flex justify-center gap-6 mb-8 min-h-[360px]">
                 {getCurrentCertificates().map(certificate => renderCard(certificate))}
               </div>
 
