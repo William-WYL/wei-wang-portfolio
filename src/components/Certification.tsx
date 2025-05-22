@@ -1,5 +1,8 @@
+
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
+import InnerImageZoom from 'react-inner-image-zoom';
+import 'react-inner-image-zoom/src/styles.css';
 
 interface Certificate {
   id: number;
@@ -8,6 +11,7 @@ interface Certificate {
   score?: string;
   date: string;
   image: string;
+  description?: string;
 }
 
 const CertificateCarousel = () => {
@@ -24,6 +28,7 @@ const CertificateCarousel = () => {
       score: 'over 90%',
       date: 'March 2024',
       image: 'image/certificates/javaCerti.jpeg',
+      description: 'Java description'
     },
     {
       id: 2,
@@ -32,6 +37,7 @@ const CertificateCarousel = () => {
       score: 'over 90%',
       date: 'March 2024',
       image: 'image/certificates/WebDevCerti.jpeg',
+      description: 'WEB DEV description'
     },
     {
       id: 3,
@@ -39,6 +45,7 @@ const CertificateCarousel = () => {
       issuer: 'LinkedIn Learning',
       date: 'May 2025',
       image: 'image/certificates/CertificateOfCompletion_Programming Foundations ObjectOriented Design-1.png',
+      description: 'OO description'
     },
     {
       id: 4,
@@ -46,6 +53,7 @@ const CertificateCarousel = () => {
       issuer: 'International Institute of Business Analysis (IIBA®)',
       date: 'May 2025',
       image: 'image/certificates/CertificateOfCompletion_Programming Foundations ObjectOriented Design-1.png',
+      description: 'BA description'
     },
     {
       id: 5,
@@ -53,6 +61,7 @@ const CertificateCarousel = () => {
       issuer: 'Design Guild',
       date: 'July 2024',
       image: '/api/placeholder/300/200',
+      description: 'UI/UX description'
     },
     {
       id: 6,
@@ -61,6 +70,7 @@ const CertificateCarousel = () => {
       score: 'average over 90%',
       date: 'May 2025',
       image: 'image/certificates/transcript.png',
+      description: 'Grade description'
     }
   ];
 
@@ -133,6 +143,7 @@ const CertificateCarousel = () => {
           src={certificate.image}
           alt={certificate.title}
           className="w-full h-full object-cover"
+          onClick={() => handleExpandCard(certificate)}
         />
         <button
           className="absolute bottom-0 right-0 p-2 bg-purple-600 text-white rounded-tl-lg"
@@ -219,10 +230,16 @@ const CertificateCarousel = () => {
               </button>
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="md:w-1/2">
-                  <img
-                    src={expandedCard.image}
-                    alt={expandedCard.title}
+                  <InnerImageZoom
+                    src={expandedCard.image} // Regular image
+                    zoomSrc={expandedCard.image}
+                    zoomType="hover"
+                    zoomPreload={true} // Preload the zoom image for smoother user experience
                     className="w-full h-auto rounded-lg shadow-lg"
+
+                    fullscreenOnMobile={true}
+                    hideCloseButton={true}
+                    hideHint={true}
                   />
                 </div>
                 <div className="md:w-1/2">
@@ -233,7 +250,7 @@ const CertificateCarousel = () => {
                       <p><span className="font-semibold">Score:</span> <span className="text-purple-600 dark:text-purple-400 font-bold">{expandedCard.score}</span></p>
                     )}
                     <p><span className="font-semibold">Date Issued:</span> {expandedCard.date}</p>
-                    <p className="mt-6">This certificate validates my expertise and knowledge in this technical area, demonstrating my commitment to excellence and continuous learning.</p>
+                    <p className="mt-6">{expandedCard.description}</p>
                   </div>
                 </div>
               </div>
