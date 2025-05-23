@@ -38,8 +38,8 @@ const Skills = () => {
     { name: 'Figma' },
     { name: 'Ruby' },
     { name: 'Vue' },
+    { name: 'Axios' },
     { name: 'Git' },
-    { name: 'GitHub' },
   ];
 
   // Split skills into two rows

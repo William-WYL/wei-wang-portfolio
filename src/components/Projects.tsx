@@ -69,7 +69,7 @@ const Projects = () => {
       title: 'Air Quality Monitor',
       description: 'A responsive web application that displays real-time air quality data and weather forecasts for cities worldwide.',
       tags: ['React', 'JavaScript', 'Zustand', 'Tailwind CSS'],
-      image: '../public/image/projects/aqi-project.gif',
+      image: 'image/projects/aqi-project.gif',
       github: 'https://github.com/William-WYL/aqi-app',
       demo: 'https://aqi-app-gamma.vercel.app/',
     },
@@ -77,7 +77,7 @@ const Projects = () => {
       title: 'Game Hub',
       description: 'Game Hub is a practice project focused on mastering React and TypeScript integration, along with modern web development tools.',
       tags: ['React', 'TypeScript', 'Chakra UI', 'Axios'],
-      image: '../public/image/projects/gamehub-project.gif',
+      image: 'image/projects/gamehub-project.gif',
       github: 'https://github.com/William-WYL/game-hub',
       demo: 'https://game-hub-lilac-three-69.vercel.app/'
     },
