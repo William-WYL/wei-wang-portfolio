@@ -179,16 +179,19 @@ const Contact = () => {
               <div className="mt-8">
                 <h4 className="font-medium mb-3">Connect with me</h4>
                 <div className="flex space-x-4">
-                  {['twitter', 'linkedin', 'github', 'instagram'].map((social, i) => (
+                  {['linkedin', 'github'].map((social, i) => (
                     <a
                       key={i}
-                      href="#"
+                      href={social === 'github' ? 'https://github.com/William-WYL' : '#'}
                       className="h-10 w-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors duration-300"
                     >
                       <span className="sr-only">{social}</span>
-                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                      {social === 'github' ? <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.699 1.028 1.592 1.028 2.683 0 3.841-2.337 4.687-4.565 4.934.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C17.14 18.163 20 14.418 20 10c0-5.523-4.477-10-10-10z" clipRule="evenodd" />
-                      </svg>
+                      </svg> :
+                        <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M4.983 3.5C4.983 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.483 1.12 2.483 2.5zM.5 8h4V24h-4V8zm7.5 0h3.833v2.197h.054c.534-1.015 1.838-2.088 3.782-2.088C21.08 8.109 22 10.278 22 14.131V24h-4v-9.022c0-2.146-.767-3.612-2.686-3.612-1.465 0-2.336.987-2.719 1.941-.14.341-.175.814-.175 1.289V24h-4V8z" />
+                        </svg>}
                     </a>
                   ))}
                 </div>

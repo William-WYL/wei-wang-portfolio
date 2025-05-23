@@ -66,77 +66,45 @@ const Projects = () => {
 
   const allProjects = [
     {
-      title: 'E-commerce Dashboard',
-      description: 'A comprehensive dashboard for e-commerce store owners with real-time analytics, inventory management, and sales reporting.',
-      tags: ['React', 'TypeScript', 'Redux', 'Tailwind CSS'],
-      image: '/api/placeholder/600/400',
-      github: '#',
-      demo: '#',
+      title: 'Air Quality Monitor',
+      description: 'A responsive web application that displays real-time air quality data and weather forecasts for cities worldwide.',
+      tags: ['React', 'JavaScript', 'Zustand', 'Tailwind CSS'],
+      image: '../public/image/projects/aqi-project.gif',
+      github: 'https://github.com/William-WYL/aqi-app',
+      demo: 'https://aqi-app-gamma.vercel.app/',
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, file sharing, and team communication features.',
-      tags: ['React', 'TypeScript', 'Firebase', 'CSS-in-JS'],
-      image: '/api/placeholder/600/400',
-      github: '#',
-      demo: '#',
+      title: 'Game Hub',
+      description: 'Game Hub is a practice project focused on mastering React and TypeScript integration, along with modern web development tools.',
+      tags: ['React', 'TypeScript', 'Chakra UI', 'Axios'],
+      image: '../public/image/projects/gamehub-project.gif',
+      github: 'https://github.com/William-WYL/game-hub',
+      demo: 'https://game-hub-lilac-three-69.vercel.app/'
     },
     {
-      title: 'Personal Finance Tracker',
-      description: 'An application to track personal finances, set budgets, and visualize spending patterns with interactive charts.',
-      tags: ['React', 'JavaScript', 'Chart.js', 'Material UI'],
-      image: '/api/placeholder/600/400',
-      github: '#',
-      demo: '#',
+      title: 'Fuji Sushi',
+      description: 'Fuji Sushi is a practice project that serves as a responsive sushi restaurant website with essential features like interactive menus, form validation, and smooth UI animations.',
+      tags: ['JavaScript', 'HTML', 'CSS'],
+      image: '../public/image/projects/fujisushi-project.gif',
+      github: 'https://github.com/William-WYL/JS-FujiShushi',
+      demo: 'https://william-wyl.github.io/JS-FujiShushi/',
     },
     {
-      title: 'Weather Forecast App',
-      description: 'A responsive weather application with location-based forecasts, interactive maps, and detailed weather analytics.',
-      tags: ['React', 'JavaScript', 'OpenWeather API', 'Leaflet'],
-      image: '/api/placeholder/600/400',
-      github: '#',
-      demo: '#',
+      title: 'To-do List',
+      description: "React Todo List is a functional task management application with core features like adding, editing, and deleting todos, along with smooth UI interactions powered by React's modern hooks system.",
+      tags: ['React', 'JavaScript', 'UUID', 'Font Awesome'],
+      image: '../public/image/projects/todolist-project.gif',
+      github: 'https://github.com/William-WYL/react-todolist-app',
+      demo: 'https://todolist-app-eight-nu.vercel.app/',
     },
-    {
-      title: 'Social Media Dashboard',
-      description: 'Analytics dashboard for social media managers to track engagement, schedule posts, and analyze performance metrics.',
-      tags: ['Vue.js', 'TypeScript', 'Node.js', 'MongoDB'],
-      image: '/api/placeholder/600/400',
-      github: '#',
-      demo: '#',
-    },
-    {
-      title: 'Recipe Sharing Platform',
-      description: 'A community-driven platform for sharing recipes with user ratings, cooking timers, and ingredient shopping lists.',
-      tags: ['React', 'Express.js', 'PostgreSQL', 'AWS S3'],
-      image: '/api/placeholder/600/400',
-      github: '#',
-      demo: '#',
-    },
-    {
-      title: 'Real Estate Portal',
-      description: 'Property listing website with advanced search filters, virtual tours, and mortgage calculator integration.',
-      tags: ['Next.js', 'TypeScript', 'Prisma', 'Stripe API'],
-      image: '/api/placeholder/600/400',
-      github: '#',
-      demo: '#',
-    },
-    {
-      title: 'Fitness Tracking App',
-      description: 'Mobile-first fitness application with workout planning, progress tracking, and social challenges.',
-      tags: ['React Native', 'Redux', 'Firebase', 'HealthKit'],
-      image: '/api/placeholder/600/400',
-      github: '#',
-      demo: '#',
-    },
-    {
-      title: 'Learning Management System',
-      description: 'Educational platform with course creation tools, video streaming, quizzes, and student progress tracking.',
-      tags: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-      image: '/api/placeholder/600/400',
-      github: '#',
-      demo: '#',
-    },
+    // {
+    //   title: '',
+    //   description: '',
+    //   tags: ['React', 'Node.js', 'MongoDB'],
+    //   image: '/api/placeholder/600/400',
+    //   github: '#',
+    //   demo: '#',
+    // },
   ];
 
   const displayedProjects = showAllProjects ? allProjects : allProjects.slice(0, 3);
@@ -188,18 +156,24 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                   <div className="flex space-x-4">
                     <a
-                      href={project.github}
-                      className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors duration-300"
-                      aria-label="View GitHub Repository"
-                    >
-                      <Github className="h-5 w-5 text-purple-900" />
-                    </a>
-                    <a
                       href={project.demo}
+                      // New tag
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors duration-300"
                       aria-label="View Live Demo"
                     >
                       <ExternalLink className="h-5 w-5 text-purple-900" />
+                    </a>
+                    <a
+                      href={project.github}
+                      // New tag
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors duration-300"
+                      aria-label="View GitHub Repository"
+                    >
+                      <Github className="h-5 w-5 text-purple-900" />
                     </a>
                   </div>
                 </div>
