@@ -107,7 +107,7 @@ const Projects = () => {
     },
     {
       title: 'Image to HTML Conversion',
-      description: "his project is a pixel perfect HTML/CSS recreation of a reference image using only HTML and CSS. The goal is to closely match the layout, spacing, and colors of the original image.",
+      description: "This project is a pixel perfect HTML/CSS recreation of a reference image using only HTML and CSS. The goal is to closely match the layout, spacing, and colors of the original image.",
       tags: ['CSS', 'HTML'],
       image: 'image/projects/pxcook-project.gif',
       github: 'https://github.com/William-WYL/pixel-recreation',
