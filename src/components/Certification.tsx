@@ -28,7 +28,7 @@ const CertificateCarousel = () => {
       score: 'over 90%',
       date: 'March 2024',
       image: 'image/certificates/javaCerti.jpeg',
-      description: 'Java description'
+      // description: 'Java description'
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ const CertificateCarousel = () => {
       score: 'over 90%',
       date: 'March 2024',
       image: 'image/certificates/WebDevCerti.jpeg',
-      description: 'WEB DEV description'
+      // description: 'WEB DEV description'
     },
     {
       id: 3,
@@ -45,7 +45,7 @@ const CertificateCarousel = () => {
       issuer: 'LinkedIn Learning',
       date: 'May 2025',
       image: 'image/certificates/CertificateOfCompletion_Programming Foundations ObjectOriented Design-1.png',
-      description: 'OO description'
+      // description: 'OO description'
     },
     {
       id: 4,
@@ -53,15 +53,15 @@ const CertificateCarousel = () => {
       issuer: 'International Institute of Business Analysis (IIBA®)',
       date: 'May 2025',
       image: 'image/certificates/CertificateOfCompletion_Programming Foundations ObjectOriented Design-1.png',
-      description: 'BA description'
+      // description: 'BA description'
     },
     {
       id: 5,
-      title: 'UI/UX Design Principles',
-      issuer: 'Design Guild',
-      date: 'July 2024',
-      image: '/api/placeholder/300/200',
-      description: 'UI/UX description'
+      title: 'Certificate of Business Ethics',
+      issuer: 'National Association of State Boards of Accountancy',
+      date: 'May 2025',
+      image: 'image/certificates/CertificateOfCompletion_Business Ethics-1.png',
+      // description: 'Ethics'
     },
     {
       id: 6,
@@ -70,7 +70,7 @@ const CertificateCarousel = () => {
       score: 'average over 90%',
       date: 'May 2025',
       image: 'image/certificates/transcript.png',
-      description: 'Grade description'
+      // description: 'Grade description'
     }
   ];
 
