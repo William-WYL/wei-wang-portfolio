@@ -60,7 +60,7 @@ const CertificateCarousel = () => {
       title: 'Certificate of Business Ethics',
       issuer: 'National Association of State Boards of Accountancy',
       date: 'May 2025',
-      image: 'image/certificates/CertificateOfCompletion_Business Ethics-1.png',
+      image: 'image/certificates/CertificateOfCompletion_Business Ethics-1.jpeg',
       // description: 'Ethics'
     },
     {
