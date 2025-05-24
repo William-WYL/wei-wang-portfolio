@@ -85,13 +85,15 @@ const About = () => {
                 View My Work
               </motion.a>
               <motion.a
-                href="#projects"
+                href="/WeiWang-FullStackDeveloper.pdf"
                 className="px-6 py-3 bg-transparent border-2 border-purple-700 text-purple-600 dark:text-purple-400 hover:bg-purple-600 hover:text-white font-medium rounded-lg transition-colors duration-300 inline-flex items-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 variants={itemVariants}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Resume
+                My Resume
               </motion.a>
             </div>
           </motion.div>

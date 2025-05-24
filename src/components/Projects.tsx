@@ -66,14 +66,6 @@ const Projects = () => {
 
   const allProjects = [
     {
-      title: 'Air Quality Monitor',
-      description: 'A responsive web application that displays real-time air quality data and weather forecasts for cities worldwide.',
-      tags: ['React', 'JavaScript', 'Zustand', 'Tailwind CSS'],
-      image: 'image/projects/aqi-project.gif',
-      github: 'https://github.com/William-WYL/aqi-app',
-      demo: 'https://aqi-app-gamma.vercel.app/',
-    },
-    {
       title: 'Game Hub',
       description: 'Game Hub is a practice project focused on mastering React and TypeScript integration, along with modern web development tools.',
       tags: ['React', 'TypeScript', 'Chakra UI', 'Axios'],
@@ -90,6 +82,22 @@ const Projects = () => {
       demo: 'https://william-wyl.github.io/JS-FujiShushi/',
     },
     {
+      title: 'Game Realm CMS',
+      description: 'Game Realm Content Management System is a full-stack web project built with PHP, JavaScript, and Bootstrap. It utilizes MySQL for data management, combining server-side logic with frontend features.',
+      tags: ['javascript', 'PHP', 'MySQL', 'Bootstrap'],
+      image: 'image/projects/gamerealm-project.gif',
+      github: 'https://github.com/William-WYL/gamerealm-cms-project',
+    }
+    ,
+    {
+      title: 'Air Quality Monitor',
+      description: 'A responsive web application that displays real-time air quality data and weather forecasts for cities worldwide.',
+      tags: ['React', 'JavaScript', 'Zustand', 'Tailwind CSS'],
+      image: 'image/projects/aqi-project.gif',
+      github: 'https://github.com/William-WYL/aqi-app',
+      demo: 'https://aqi-app-gamma.vercel.app/',
+    },
+    {
       title: 'To-do List',
       description: "React Todo List is a functional task management application with core features like adding, editing, and deleting todos, along with smooth UI interactions powered by React's modern hooks system.",
       tags: ['React', 'JavaScript', 'UUID', 'Font Awesome'],
@@ -97,14 +105,14 @@ const Projects = () => {
       github: 'https://github.com/William-WYL/react-todolist-app',
       demo: 'https://todolist-app-eight-nu.vercel.app/',
     },
-    // {
-    //   title: '',
-    //   description: '',
-    //   tags: ['React', 'Node.js', 'MongoDB'],
-    //   image: '/api/placeholder/600/400',
-    //   github: '#',
-    //   demo: '#',
-    // },
+    {
+      title: 'Image to HTML Conversion',
+      description: "his project is a pixel perfect HTML/CSS recreation of a reference image using only HTML and CSS. The goal is to closely match the layout, spacing, and colors of the original image.",
+      tags: ['CSS', 'HTML'],
+      image: 'image/projects/pxcook-project.gif',
+      github: 'https://github.com/William-WYL/pixel-recreation',
+      demo: 'https://william-wyl.github.io/pixel-recreation/',
+    }
   ];
 
   const displayedProjects = showAllProjects ? allProjects : allProjects.slice(0, 3);
@@ -155,19 +163,19 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                   <div className="flex space-x-4">
-                    <a
-                      href={project.demo}
-                      // New tag
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors duration-300"
-                      aria-label="View Live Demo"
-                    >
-                      <ExternalLink className="h-5 w-5 text-purple-900" />
-                    </a>
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors duration-300"
+                        aria-label="View Live Demo"
+                      >
+                        <ExternalLink className="h-5 w-5 text-purple-900" />
+                      </a>
+                    )}
                     <a
                       href={project.github}
-                      // New tag
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors duration-300"

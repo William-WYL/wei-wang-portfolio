@@ -55,7 +55,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme = 'light' }) => {
               className="font-bold text-xl md:text-2xl text-gray-900 dark:text-white"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              <span className="text-purple-600 dark:text-purple-400">Port</span>folio
+              <span className="text-purple-600 dark:text-purple-400">Wei </span>Wang
             </a>
           </div>
 
