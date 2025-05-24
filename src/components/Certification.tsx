@@ -52,12 +52,12 @@ const CertificateCarousel = () => {
       title: 'Business Analyst and Project Manager Collaboration',
       issuer: 'International Institute of Business Analysis (IIBA®)',
       date: 'May 2025',
-      image: 'image/certificates/CertificateOfCompletion_Programming Foundations ObjectOriented Design-1.png',
+      image: 'image/certificates/CertificateOfCompletion_Business Analyst and Project Manager Collaboration 2018.jpeg',
       // description: 'BA description'
     },
     {
       id: 5,
-      title: 'Certificate of Business Ethics',
+      title: 'Business Ethics',
       issuer: 'National Association of State Boards of Accountancy',
       date: 'May 2025',
       image: 'image/certificates/CertificateOfCompletion_Business Ethics-1.jpeg',
