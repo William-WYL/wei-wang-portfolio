@@ -58,7 +58,7 @@ const CertificateCarousel = () => {
     {
       id: 5,
       title: 'Business Ethics',
-      issuer: 'National Association of State Boards of Accountancy',
+      issuer: 'National Association of State Boards of Accountancy (NASBA)',
       date: 'May 2025',
       image: 'image/certificates/CertificateOfCompletion_Business Ethics-1.jpeg',
       // description: 'Ethics'

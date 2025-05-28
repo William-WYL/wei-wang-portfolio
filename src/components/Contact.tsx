@@ -182,7 +182,7 @@ const Contact = () => {
                   {['linkedin', 'github'].map((social, i) => (
                     <a
                       key={i}
-                      href={social === 'github' ? 'https://github.com/William-WYL' : '#'}
+                      href={social === 'github' ? 'https://github.com/William-WYL' : 'https://www.linkedin.com/in/wei-wang-31261078/'}
                       className="h-10 w-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors duration-300"
                     >
                       <span className="sr-only">{social}</span>
