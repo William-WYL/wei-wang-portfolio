@@ -84,7 +84,7 @@ const Projects = () => {
     {
       title: 'Game Realm CMS',
       description: 'Game Realm Content Management System is a full-stack web project built with PHP, JavaScript, and Bootstrap. It utilizes MySQL for data management, combining server-side logic with frontend features.',
-      tags: ['javascript', 'PHP', 'MySQL', 'Bootstrap'],
+      tags: ['JavaScript', 'PHP', 'MySQL', 'Bootstrap'],
       image: 'image/projects/gamerealm-project.gif',
       github: 'https://github.com/William-WYL/gamerealm-cms-project',
     }
