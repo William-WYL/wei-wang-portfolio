@@ -59,8 +59,7 @@ const About = () => {
               I'm a <span className="text-purple-600 dark:text-purple-400">Full Stack Developer</span>
             </h3>
             <p className="text-gray-700 dark:text-gray-300 mb-6 text-lg">
-              I am a student in Term 3 of a program in Red River College, Canada, in Full Stack Web Development.
-              With a strong foundation in both client-side and server-side development from one year college training
+              I am a student in Term 3 of Full Stack Web Development in Red River College, Canada. With a strong foundation in both client-side and server-side development from one year college training
               and one year self-learning, I deliver seamless, responsive user experiences backed by scalable and
               robust backend systems.
             </p>

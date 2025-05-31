@@ -57,10 +57,10 @@ const CertificateCarousel = () => {
     },
     {
       id: 5,
-      title: 'Business Ethics',
-      issuer: 'National Association of State Boards of Accountancy (NASBA)',
+      title: 'Using Style Guides to Bridge Design and Development',
+      issuer: 'LinkedIn Learning',
       date: 'May 2025',
-      image: 'image/certificates/CertificateOfCompletion_Business Ethics-1.jpeg',
+      image: 'image/certificates/CertificateOfCompletion_Using Style Guides to Bridge Design and Development.jpeg',
       // description: 'Ethics'
     },
     {
