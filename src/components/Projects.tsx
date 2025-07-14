@@ -98,6 +98,14 @@ const Projects = () => {
       demo: 'https://aqi-app-gamma.vercel.app/',
     },
     {
+      title: 'Mini Blog',
+      description: "MiniBlog is a simple Vue 3 application that lets users create, edit, delete and view blog posts using Pinia for state management and Vue Router for navigation.",
+      tags: ['Vue3', 'Pinia', 'Vue Router'],
+      image: 'image/projects/mini-blog.gif',
+      github: 'https://github.com/William-WYL/vue-miniblog',
+      demo: 'https://vue-miniblog-nu.vercel.app/',
+    },
+    {
       title: 'To-do List',
       description: "React Todo List is a functional task management application with core features like adding, editing, and deleting todos, along with smooth UI interactions powered by React's modern hooks system.",
       tags: ['React', 'JavaScript', 'UUID', 'Font Awesome'],
