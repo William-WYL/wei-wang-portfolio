@@ -43,9 +43,10 @@ const Skills = () => {
     { name: 'Tailwind' },
     { name: 'React Redux' },
     { name: 'Zustand' },
+    { name: 'Pinia' },
     { name: 'Figma' },
     { name: 'Axios' },
-    { name: 'Git' },
+    { name: 'Git' }
   ]
 
   // Split skills into two rows
