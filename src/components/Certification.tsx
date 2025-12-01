@@ -1,8 +1,7 @@
-
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
-import InnerImageZoom from 'react-inner-image-zoom';
-import 'react-inner-image-zoom/src/styles.css';
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
+import InnerImageZoom from "react-inner-image-zoom";
+import "react-inner-image-zoom/src/styles.css";
 
 interface Certificate {
   id: number;
@@ -23,55 +22,58 @@ const CertificateCarousel = () => {
   const certificates: Certificate[] = [
     {
       id: 1,
-      title: 'Java Programming National Examination Certificate',
-      issuer: 'National Computer Rank Examination',
-      score: 'over 90%',
-      date: 'March 2024',
-      image: 'image/certificates/javaCerti.jpeg',
+      title: "Java Programming National Examination Certificate",
+      issuer: "National Computer Rank Examination",
+      score: "over 90%",
+      date: "March 2024",
+      image: "image/certificates/javaCerti.jpeg",
       // description: 'Java description'
     },
     {
       id: 2,
-      title: 'Web Development National Examination Certificate',
-      issuer: 'National Computer Rank Examination',
-      score: 'over 90%',
-      date: 'March 2024',
-      image: 'image/certificates/WebDevCerti.jpeg',
+      title: "Web Development National Examination Certificate",
+      issuer: "National Computer Rank Examination",
+      score: "over 90%",
+      date: "March 2024",
+      image: "image/certificates/WebDevCerti.jpeg",
       // description: 'WEB DEV description'
     },
     {
       id: 3,
-      title: 'Programming Foundations: Object-Oriented Design',
-      issuer: 'LinkedIn Learning',
-      date: 'May 2025',
-      image: 'image/certificates/CertificateOfCompletion_Programming Foundations ObjectOriented Design-1.png',
+      title: "Programming Foundations: Object-Oriented Design",
+      issuer: "LinkedIn Learning",
+      date: "May 2025",
+      image:
+        "image/certificates/CertificateOfCompletion_Programming Foundations ObjectOriented Design-1.png",
       // description: 'OO description'
     },
     {
       id: 4,
-      title: 'Business Analyst and Project Manager Collaboration',
-      issuer: 'International Institute of Business Analysis (IIBA®)',
-      date: 'May 2025',
-      image: 'image/certificates/CertificateOfCompletion_Business Analyst and Project Manager Collaboration 2018.jpeg',
+      title: "Business Analyst and Project Manager Collaboration",
+      issuer: "International Institute of Business Analysis (IIBA®)",
+      date: "May 2025",
+      image:
+        "image/certificates/CertificateOfCompletion_Business Analyst and Project Manager Collaboration 2018.jpeg",
       // description: 'BA description'
     },
     {
       id: 5,
-      title: 'Using Style Guides to Bridge Design and Development',
-      issuer: 'LinkedIn Learning',
-      date: 'May 2025',
-      image: 'image/certificates/CertificateOfCompletion_Using Style Guides to Bridge Design and Development.jpeg',
+      title: "Using Style Guides to Bridge Design and Development",
+      issuer: "LinkedIn Learning",
+      date: "May 2025",
+      image:
+        "image/certificates/CertificateOfCompletion_Using Style Guides to Bridge Design and Development.jpeg",
       // description: 'Ethics'
     },
     {
       id: 6,
-      title: 'Grade Report',
-      issuer: 'Red River College',
-      score: 'average over 90%',
-      date: 'May 2025',
-      image: 'image/certificates/transcript.png',
+      title: "Grade Report",
+      issuer: "Red River College",
+      score: "average over 90%",
+      date: "May 2025",
+      image: "image/certificates/transcript.png",
       // description: 'Grade description'
-    }
+    },
   ];
 
   // Calculate total number of pages (for desktop)
@@ -113,10 +115,10 @@ const CertificateCarousel = () => {
     checkIsMobile();
 
     // Add event listener for window resize
-    window.addEventListener('resize', checkIsMobile);
+    window.addEventListener("resize", checkIsMobile);
 
     // Clean up
-    return () => window.removeEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
 
   // Auto-rotate carousel every 10 seconds (desktop only)
@@ -152,8 +154,14 @@ const CertificateCarousel = () => {
           <Maximize2 size={18} />
         </button>
       </div>
-      <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">{certificate.title}</h3>
-      {certificate.score && <p className="text-purple-600 dark:text-purple-400 font-medium">Score: {certificate.score}</p>}
+      <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
+        {certificate.title}
+      </h3>
+      {certificate.score && (
+        <p className="text-purple-600 dark:text-purple-400 font-medium">
+          Score: {certificate.score}
+        </p>
+      )}
       <p className="text-sm text-gray-500 dark:text-gray-400">
         {certificate.issuer} • {certificate.date}
       </p>
@@ -169,15 +177,19 @@ const CertificateCarousel = () => {
               My Certificates
             </h2>
             <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              I scored over <span className="text-purple-600 dark:text-purple-400">90%</span> in both the Java and Web Development exams of the National Computer Rank Examination in China,
-              and with a GPA of <span className="text-purple-600 dark:text-purple-400">4.44</span>, I have consistently maintained excellent academic performance.
+              I scored over{" "}
+              <span className="text-purple-600 dark:text-purple-400">90%</span>{" "}
+              in both the Java and Web Development exams of the National
+              Computer Rank Examination in China, and with a GPA of{" "}
+              <span className="text-purple-600 dark:text-purple-400">4.46</span>
+              , I have consistently maintained excellent academic performance.
             </p>
           </div>
 
           {/* Mobile: Card list view */}
           {isMobile && (
             <div className="flex flex-col gap-6">
-              {certificates.map(certificate => renderCard(certificate))}
+              {certificates.map((certificate) => renderCard(certificate))}
             </div>
           )}
 
@@ -186,7 +198,9 @@ const CertificateCarousel = () => {
             <div className="relative">
               {/* Cards container */}
               <div className="flex justify-center gap-6 mb-8 min-h-[360px]">
-                {getCurrentCertificates().map(certificate => renderCard(certificate))}
+                {getCurrentCertificates().map((certificate) =>
+                  renderCard(certificate)
+                )}
               </div>
 
               {/* Navigation arrows */}
@@ -208,8 +222,11 @@ const CertificateCarousel = () => {
                 {Array.from({ length: totalPages }).map((_, index) => (
                   <button
                     key={index}
-                    className={`h-2 rounded-full transition-all ${currentPage === index ? 'w-8 bg-purple-600 dark:bg-purple-400' : 'w-2 bg-gray-300 dark:bg-gray-600'
-                      }`}
+                    className={`h-2 rounded-full transition-all ${
+                      currentPage === index
+                        ? "w-8 bg-purple-600 dark:bg-purple-400"
+                        : "w-2 bg-gray-300 dark:bg-gray-600"
+                    }`}
                     onClick={() => setCurrentPage(index)}
                   />
                 ))}
@@ -236,20 +253,32 @@ const CertificateCarousel = () => {
                     zoomType="hover"
                     zoomPreload={true} // Preload the zoom image for smoother user experience
                     className="w-full h-auto rounded-lg shadow-lg"
-
                     fullscreenOnMobile={true}
                     hideCloseButton={true}
                     hideHint={true}
                   />
                 </div>
                 <div className="md:w-1/2">
-                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">{expandedCard.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+                    {expandedCard.title}
+                  </h3>
                   <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                    <p><span className="font-semibold">Issuer:</span> {expandedCard.issuer}</p>
+                    <p>
+                      <span className="font-semibold">Issuer:</span>{" "}
+                      {expandedCard.issuer}
+                    </p>
                     {expandedCard.score && (
-                      <p><span className="font-semibold">Score:</span> <span className="text-purple-600 dark:text-purple-400 font-bold">{expandedCard.score}</span></p>
+                      <p>
+                        <span className="font-semibold">Score:</span>{" "}
+                        <span className="text-purple-600 dark:text-purple-400 font-bold">
+                          {expandedCard.score}
+                        </span>
+                      </p>
                     )}
-                    <p><span className="font-semibold">Date Issued:</span> {expandedCard.date}</p>
+                    <p>
+                      <span className="font-semibold">Date Issued:</span>{" "}
+                      {expandedCard.date}
+                    </p>
                     <p className="mt-6">{expandedCard.description}</p>
                   </div>
                 </div>
