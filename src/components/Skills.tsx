@@ -1,108 +1,185 @@
-import { useState, useEffect, type JSX } from 'react'
-import { FaHtml5, FaJava, FaJsSquare, FaPhp, FaPython, FaReact, FaVuejs } from "react-icons/fa"
-import { BiLogoTypescript } from "react-icons/bi"
-import { GrMysql } from "react-icons/gr"
-import { SiAngular, SiRuby, SiTailwindcss } from 'react-icons/si'
+import { useState, useEffect, type JSX } from "react";
+import {
+  FaHtml5,
+  FaJava,
+  FaJsSquare,
+  FaPhp,
+  FaPython,
+  FaReact,
+  FaVuejs,
+} from "react-icons/fa";
+import { BiLogoTypescript } from "react-icons/bi";
+import { GrMysql } from "react-icons/gr";
+import { SiNextdotjs, SiRuby, SiTailwindcss } from "react-icons/si";
 
 interface Skill {
-  name: string
-  level: number
-  icon: JSX.Element
-  direction: 'left' | 'right' | 'top' | 'bottom'
+  name: string;
+  level: number;
+  icon: JSX.Element;
+  direction: "left" | "right" | "top" | "bottom";
 }
 
 interface OtherTech {
-  name: string
+  name: string;
 }
 
 const Skills = () => {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
 
   // Skill data with types
   const skills: Skill[] = [
-    { name: 'React', level: 90, icon: <FaReact className="text-blue-400" size={40} />, direction: 'left' },
-    { name: 'Vue', level: 85, icon: <FaVuejs className="text-green-500" size={40} />, direction: 'left' },
-    { name: 'Angular', level: 80, icon: <SiAngular className="text-red-600" size={40} />, direction: 'right' },
-    { name: 'TypeScript', level: 85, icon: <BiLogoTypescript className="text-blue-600" size={40} />, direction: 'top' },
-    { name: 'JavaScript', level: 95, icon: <FaJsSquare className="text-yellow-400" size={40} />, direction: 'right' },
-    { name: 'HTML & CSS', level: 90, icon: <FaHtml5 className="text-orange-500" size={40} />, direction: 'bottom' },
-    { name: 'Java', level: 90, icon: <FaJava className="text-red-500" size={40} />, direction: 'right' },
-    { name: 'Python', level: 85, icon: <FaPython className="text-blue-500" size={40} />, direction: 'bottom' },
-    { name: 'PHP', level: 80, icon: <FaPhp className="text-indigo-600" size={40} />, direction: 'left' },
-    { name: 'Ruby', level: 70, icon: <SiRuby className="text-rose-500" size={40} />, direction: 'bottom' },
-    { name: 'MySql', level: 85, icon: <GrMysql className="text-blue-600" size={40} />, direction: 'top' },
-    { name: 'Tailwind', level: 85, icon: <SiTailwindcss className="text-teal-400" size={40} />, direction: 'top' },
-  ]
+    {
+      name: "React",
+      level: 90,
+      icon: <FaReact className="text-blue-400" size={40} />,
+      direction: "left",
+    },
+    {
+      name: "Vue",
+      level: 85,
+      icon: <FaVuejs className="text-green-500" size={40} />,
+      direction: "left",
+    },
+    {
+      name: "Next.js",
+      level: 80,
+      icon: <SiNextdotjs className="text-white" size={40} />,
+      direction: "right",
+    },
+    {
+      name: "TypeScript",
+      level: 85,
+      icon: <BiLogoTypescript className="text-blue-600" size={40} />,
+      direction: "top",
+    },
+    {
+      name: "JavaScript",
+      level: 95,
+      icon: <FaJsSquare className="text-yellow-400" size={40} />,
+      direction: "right",
+    },
+    {
+      name: "HTML & CSS",
+      level: 90,
+      icon: <FaHtml5 className="text-orange-500" size={40} />,
+      direction: "bottom",
+    },
+    {
+      name: "Java",
+      level: 90,
+      icon: <FaJava className="text-red-500" size={40} />,
+      direction: "right",
+    },
+    {
+      name: "Python",
+      level: 85,
+      icon: <FaPython className="text-blue-500" size={40} />,
+      direction: "bottom",
+    },
+    {
+      name: "PHP",
+      level: 80,
+      icon: <FaPhp className="text-indigo-600" size={40} />,
+      direction: "left",
+    },
+    {
+      name: "Ruby",
+      level: 70,
+      icon: <SiRuby className="text-rose-500" size={40} />,
+      direction: "bottom",
+    },
+    {
+      name: "MySql",
+      level: 85,
+      icon: <GrMysql className="text-blue-600" size={40} />,
+      direction: "top",
+    },
+    {
+      name: "Tailwind",
+      level: 85,
+      icon: <SiTailwindcss className="text-teal-400" size={40} />,
+      direction: "top",
+    },
+  ];
 
   const otherTechnologies: OtherTech[] = [
-    { name: 'RESTful API' },
-    { name: 'Rails' },
-    { name: 'Docker' },
-    { name: 'PostgreSQL' },
-    { name: 'Bootstrap' },
-    { name: 'Tailwind' },
-    { name: 'React Redux' },
-    { name: 'Zustand' },
-    { name: 'Pinia' },
-    { name: 'Figma' },
-    { name: 'Axios' },
-    { name: 'Git' }
-  ]
+    { name: "RESTful API" },
+    { name: "Rails" },
+    { name: "Docker" },
+    { name: "PostgreSQL" },
+    { name: "Bootstrap" },
+    { name: "Tailwind" },
+    { name: "React Redux" },
+    { name: "Next.js" },
+    { name: "Pinia" },
+    { name: "Figma" },
+    { name: "Axios" },
+    { name: "Git" },
+  ];
 
   // Split skills into two rows
-  const firstRow = skills.slice(0, 4)
-  const secondRow = skills.slice(4)
+  const firstRow = skills.slice(0, 4);
+  const secondRow = skills.slice(4);
 
   // Get transform classes based on direction
   const getTransformClasses = (direction: string, visible: boolean) => {
-    const baseTransform = visible ? 'translate-x-0 translate-y-0 opacity-100 scale-100' : 'opacity-0 scale-95'
+    const baseTransform = visible
+      ? "translate-x-0 translate-y-0 opacity-100 scale-100"
+      : "opacity-0 scale-95";
 
     switch (direction) {
-      case 'left':
-        return visible ? baseTransform : `${baseTransform} -translate-x-20`
-      case 'right':
-        return visible ? baseTransform : `${baseTransform} translate-x-20`
-      case 'top':
-        return visible ? baseTransform : `${baseTransform} -translate-y-20`
-      case 'bottom':
-        return visible ? baseTransform : `${baseTransform} translate-y-20`
+      case "left":
+        return visible ? baseTransform : `${baseTransform} -translate-x-20`;
+      case "right":
+        return visible ? baseTransform : `${baseTransform} translate-x-20`;
+      case "top":
+        return visible ? baseTransform : `${baseTransform} -translate-y-20`;
+      case "bottom":
+        return visible ? baseTransform : `${baseTransform} translate-y-20`;
       default:
-        return baseTransform
+        return baseTransform;
     }
-  }
+  };
 
   // Animation on scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      const element = document.getElementById('skills')
+      const element = document.getElementById("skills");
       if (element) {
-        const position = element.getBoundingClientRect()
+        const position = element.getBoundingClientRect();
         // Trigger animation when element is 20% into viewport
         if (position.top < window.innerHeight * 0.8 && position.bottom >= 0) {
-          setVisible(true)
+          setVisible(true);
         }
       }
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    handleScroll() // Check initially
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check initially
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800 dark:text-white overflow-hidden">
+    <section
+      id="skills"
+      className="py-20 bg-gray-50 dark:bg-gray-800 dark:text-white overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header with fade-in animation */}
-        <div className={`text-center mb-16 transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
-          }`}>
+        <div
+          className={`text-center mb-16 transition-all duration-1000 ease-out transform ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+          }`}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-purple-600 dark:text-purple-400">
             My Skills
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            I've worked with a variety of technologies in the web development world.
+            I've worked with a variety of technologies in the web development
+            world.
           </p>
         </div>
 
@@ -112,7 +189,10 @@ const Skills = () => {
             {firstRow.map((skill, index) => (
               <div
                 key={skill.name}
-                className={`transition-all duration-700 ease-out transform ${getTransformClasses(skill.direction, visible)}`}
+                className={`transition-all duration-700 ease-out transform ${getTransformClasses(
+                  skill.direction,
+                  visible
+                )}`}
                 style={{ transitionDelay: `${index * 150}ms` }}
               >
                 <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 hover:rotate-1">
@@ -131,16 +211,22 @@ const Skills = () => {
                     <div
                       className="bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 h-3 rounded-full transition-all duration-1000 ease-out shadow-sm"
                       style={{
-                        width: visible ? `${skill.level}%` : '0%',
-                        transitionDelay: `${(index * 150) + 400}ms`,
-                        boxShadow: visible ? '0 0 8px rgba(139, 92, 246, 0.5)' : 'none'
+                        width: visible ? `${skill.level}%` : "0%",
+                        transitionDelay: `${index * 150 + 400}ms`,
+                        boxShadow: visible
+                          ? "0 0 8px rgba(139, 92, 246, 0.5)"
+                          : "none",
                       }}
                     ></div>
                   </div>
 
                   <div className="mt-2 text-right text-sm text-gray-500 dark:text-gray-400 font-medium">
-                    <span className={`transition-all duration-700 ${visible ? 'opacity-100' : 'opacity-0'}`}
-                      style={{ transitionDelay: `${(index * 150) + 600}ms` }}>
+                    <span
+                      className={`transition-all duration-700 ${
+                        visible ? "opacity-100" : "opacity-0"
+                      }`}
+                      style={{ transitionDelay: `${index * 150 + 600}ms` }}
+                    >
                       {skill.level}%
                     </span>
                   </div>
@@ -156,7 +242,10 @@ const Skills = () => {
             {secondRow.map((skill, index) => (
               <div
                 key={skill.name}
-                className={`transition-all duration-700 ease-out transform ${getTransformClasses(skill.direction, visible)}`}
+                className={`transition-all duration-700 ease-out transform ${getTransformClasses(
+                  skill.direction,
+                  visible
+                )}`}
                 style={{ transitionDelay: `${(index + 4) * 150}ms` }}
               >
                 <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:scale-105 hover:-translate-y-2 hover:-rotate-1">
@@ -175,16 +264,24 @@ const Skills = () => {
                     <div
                       className="bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 h-3 rounded-full transition-all duration-1000 ease-out shadow-sm"
                       style={{
-                        width: visible ? `${skill.level}%` : '0%',
-                        transitionDelay: `${((index + 4) * 150) + 400}ms`,
-                        boxShadow: visible ? '0 0 8px rgba(139, 92, 246, 0.5)' : 'none'
+                        width: visible ? `${skill.level}%` : "0%",
+                        transitionDelay: `${(index + 4) * 150 + 400}ms`,
+                        boxShadow: visible
+                          ? "0 0 8px rgba(139, 92, 246, 0.5)"
+                          : "none",
                       }}
                     ></div>
                   </div>
 
                   <div className="mt-2 text-right text-sm text-gray-500 dark:text-gray-400 font-medium">
-                    <span className={`transition-all duration-700 ${visible ? 'opacity-100' : 'opacity-0'}`}
-                      style={{ transitionDelay: `${((index + 4) * 150) + 600}ms` }}>
+                    <span
+                      className={`transition-all duration-700 ${
+                        visible ? "opacity-100" : "opacity-0"
+                      }`}
+                      style={{
+                        transitionDelay: `${(index + 4) * 150 + 600}ms`,
+                      }}
+                    >
                       {skill.level}%
                     </span>
                   </div>
@@ -195,8 +292,12 @@ const Skills = () => {
         </div>
 
         {/* Other technologies section with staggered animation */}
-        <div className={`mt-24 text-center transition-all duration-1000 ease-out transform ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`} style={{ transitionDelay: '1200ms' }}>
+        <div
+          className={`mt-24 text-center transition-all duration-1000 ease-out transform ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+          style={{ transitionDelay: "1200ms" }}
+        >
           <h3 className="text-2xl font-semibold mb-8 text-purple-600 dark:text-purple-400">
             Other Technologies I Work With
           </h3>
@@ -220,7 +321,10 @@ const Skills = () => {
                   hover:text-purple-700 
                   dark:hover:text-purple-300 
                   pointer-events-auto
-                  ${visible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-95'
+                  ${
+                    visible
+                      ? "opacity-100 translate-y-0 scale-100"
+                      : "opacity-0 translate-y-4 scale-95"
                   }`}
                 style={{ transitionDelay: `${1400 + index * 75}ms` }}
               >
@@ -231,7 +335,7 @@ const Skills = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;
